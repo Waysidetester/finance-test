@@ -1,13 +1,10 @@
 import $ from 'jquery';
-import stockComponent from './stockComponent';
-
-let ticker = '';
+import response from '../db/response';
 
 const searchBar = () => {
   $('#ticker').on('keyup', (e) => {
     if (e.keyCode === 13) {
-      ticker = $('#ticker').val();
-      stockComponent.infoPrinter(ticker);
+      response.companyInfo();
     }
   });
 };

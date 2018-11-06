@@ -16,10 +16,11 @@ const compInfoPrinter = (data) => {
   $('#printHere').html(`<p>${newString}</p>`);
 };
 
-const infoPrinter = (searchCrit) => {
-  response.companyInfo(searchCrit)
+const infoPrinter = () => {
+  response.companyInfo()
     .then((data) => {
       compInfoPrinter(data);
+      console.log(data);
     })
     .catch((error) => {
       console.error(error);
