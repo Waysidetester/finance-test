@@ -1,7 +1,13 @@
 import $ from 'jquery';
 import axios from 'axios';
 
-const compInfoPrinter = (data) => {
+const baseUrl = 'https://api.iextrading.com/1.0/';
+
+// ************************************************
+
+// DOM printers
+
+const companyInfoPrinter = (data) => {
   console.log(data);
   let newString = '';
   newString += `<p>${data.symbol}</p>`;
@@ -17,16 +23,23 @@ const compInfoPrinter = (data) => {
   $('#printHere').html(`<p>${newString}</p>`);
 };
 
+// end DOM printers
+
+// ************************************************
+
+// API calls
+
 const companyInfo = () => {
   const ticker = $('#ticker').val();
-  axios.get(`https://api.iextrading.com/1.0/stock/${ticker}/company`)
+  axios.get(`${baseUrl}stock/${ticker}/company`)
     .then((data) => {
-      compInfoPrinter(data.data);
-      console.log(data);
+      companyInfoPrinter(data.data);
     })
     .catch((error) => {
       console.error(error);
     });
 };
+
+// end API calls
 
 export default { companyInfo };
