@@ -13,7 +13,7 @@ const companyInfoPrinter = (data) => {
   newString += `<p>${data.sector}</p>`;
   newString += `<p>Related Tags: ${data.tags}</p>`;
   newString += `<p>Company Site: ${data.website}</p>`;
-  $('#printHere').html(`<p>${newString}</p>`);
+  $('#companyHere').html(`<p>${newString}</p>`);
 };
 
 const infoPrinter = (searchedComp) => {
