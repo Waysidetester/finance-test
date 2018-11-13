@@ -1,3 +1,7 @@
-import search from './javascripts/components/search';
+import search from './javascripts/components/search/search';
 
-search.searchBar();
+const init = () => {
+  search.searchBar();
+};
+
+init();
