@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import response from '../../db/response';
+import factory from '../../data/factory';
 
 const companyInfoPrinter = (data) => {
   let newString = '';
@@ -17,7 +17,7 @@ const companyInfoPrinter = (data) => {
 };
 
 const infoPrinter = (searchedComp) => {
-  response.companyInfo(searchedComp)
+  factory.companyInfo(searchedComp)
     .then((data) => {
       companyInfoPrinter(data.data);
     })
